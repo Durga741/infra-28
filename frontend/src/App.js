@@ -3,8 +3,8 @@ import axios from "axios";
 
 const App = () => {
   const [formData, setFormData] = useState({
-    name of infra team : "",
-    age: ""
+    name: "",
+    height: "" // Change 'age' to 'height'
   });
 
   const handleChange = (e) => {
@@ -18,8 +18,8 @@ const App = () => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:5000/api/users", formData);
-      alert("User added successfully!" ,response.data);
-      setFormData({ name: "", age: "" });
+      alert("User added successfully!", response.data);
+      setFormData({ name: "", height: "" }); // Change 'age' to 'height'
     } catch (error) {
       console.error("Error adding user:", error);
       alert("Failed to add user.");
@@ -41,11 +41,11 @@ const App = () => {
           />
         </div>
         <div>
-          <label>Age:</label>
+          <label>Height:</label> {/* Change 'Age' to 'Height' */}
           <input
             type="number"
-            name="age"
-            value={formData.age}
+            name="height" // Change 'age' to 'height'
+            value={formData.height} // Change 'age' to 'height'
             onChange={handleChange}
             required
           />
